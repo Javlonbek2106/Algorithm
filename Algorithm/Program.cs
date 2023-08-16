@@ -1,7 +1,4 @@
-﻿using Algorithm.Search;
-using Algorithm.Sort;
-
-namespace Algorithm
+﻿namespace Algorithm
 {
     internal class Program
     {
@@ -12,7 +9,8 @@ namespace Algorithm
             //{
             //    Console.Write(" "+ arg);
             //}
-            Console.WriteLine(BinarySearch.Search(nums,7));
+            //Console.WriteLine(BinarySearch.Search(nums,7));
+            Console.WriteLine(Algorithm.LeetCode.Algorithm.ContainsDuplicate(new int[] { 1,2,3,4,5,6,7 }));
         }
     }
 }
