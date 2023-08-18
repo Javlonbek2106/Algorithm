@@ -10,7 +10,7 @@
             //    Console.Write(" "+ arg);
             //}
             //Console.WriteLine(BinarySearch.Search(nums,7));
-            Console.WriteLine(Algorithm.LeetCode.Algorithm.ContainsDuplicate(new int[] { 1,2,3,4,5,6,7 }));
+            Console.WriteLine(Algorithm.LeetCode.Algorithm.MajorityElement(new int[] { 1,2,3,4,5,6,7,1,1,1,1,7,7,7,5,5,5,5,5 }));
         }
     }
 }
