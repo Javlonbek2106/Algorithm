@@ -18,6 +18,7 @@
             }
             return false;
         }
+
         public static int MajorityElement(int[] nums)
         {
             int candidate = 0;
@@ -42,6 +43,7 @@
 
             return candidate;
         }
+
         public static int TotalMoney(int n)
         {
             int sum = 0;
@@ -63,6 +65,7 @@
             }
             return sum;
         }
+
         public static string MergeAlternately(string word1, string word2)
         {
             string result = string.Empty;
@@ -79,6 +82,7 @@
 
             return result;
         }
+
         public static string GcdOfStrings(string str1, string str2)
         {
             string result = string.Empty;
@@ -87,7 +91,7 @@
             if (str1[0] != str2[0]) return result;
             else if (str1.Substring(0, minLength) == str2.Substring(0, minLength))
             {
-                if(maxLength%minLength==0)
+                if (maxLength % minLength == 0)
                 {
                     return result;
                 }
@@ -97,6 +101,53 @@
             {
                 return result;
             }
+        }
+
+        public static int[] TwoSum(int[] nums, int target)
+        {
+            int[] ints = new int[2];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                for (int j = i + 1; j < nums.Length; j++)
+                {
+                    if (nums[i] + nums[j] == target)
+                    {
+                        ints[0] = i;
+                        ints[1] = j;
+                        return ints;
+                    }
+                }
+            }
+            return ints;
+        }
+
+        public static int RomanToInt(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return 0;
+            int total = 0;
+            var romanToInt = new Dictionary<char, int>
+            {
+                { 'I', 1 },
+                { 'V', 5 },
+                { 'X', 10 },
+                { 'L', 50 },
+                { 'C', 100 },
+                { 'D', 500 },
+                { 'M', 1000 }
+            };
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (i < s.Length - 1 && romanToInt[s[i]] < romanToInt[s[i + 1]])
+                {
+                    total -= romanToInt[s[i]];
+                }
+                else
+                {
+                    total += romanToInt[s[i]];
+                }
+            }
+            return total;
         }
     }
 }
