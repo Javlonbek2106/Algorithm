@@ -1,4 +1,6 @@
-﻿namespace Algorithm.LeetCode
+﻿using System.Diagnostics;
+
+namespace Algorithm.LeetCode
 {
     public class Algorithm
     {
@@ -150,15 +152,24 @@
             return total;
         }
 
-        public static string LongestCommonPrefix(string[] strs)
+        public static (int maxArea, TimeSpan duration) MaxArea(int[] height)
         {
-            for (int i = 0; i < strs[0].Length; i++)
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            int result = 0;
+            for (int i = 0; i < height.Length; i++)
             {
-                for (int j = 1; j < strs.Length; j++)
+                for (int j = i + 1; j < height.Length; j++)
                 {
-                    if ()
+                    int minHeight = Math.Min(height[i], height[j]);
+                    int width = j - i;
+                    result = Math.Max(result, minHeight * width);
                 }
             }
+
+            stopwatch.Stop();
+            return (result, stopwatch.Elapsed);
         }
     }
 }
